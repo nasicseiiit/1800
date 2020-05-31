@@ -6,6 +6,9 @@ from app.values.AlphaPhrases import getPossiblePhraseforDigit
 
 
 class AlphaPhraseTest(unittest.TestCase):
+    '''
+    test case to get alpha phrases for a digit from the dictionary
+    '''
     def testGetSetOfPossiblePhrasesForDigit(self):
         number = "2"
         expectedList = ["A","B","C"]
@@ -15,6 +18,9 @@ class AlphaPhraseTest(unittest.TestCase):
         print(actualList)
         self.assertEqual(expectedList, actualList)
 
+    '''
+        test case to check for does not have a replacement from the dictionary 
+    '''
     def testCheckIfDigitDoesNotHaveReplacements(self):
         number = "!"
         expectedList = []

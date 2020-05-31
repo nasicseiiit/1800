@@ -1,3 +1,10 @@
+#### written by nasicseiiit@gmail.com(Nasimunni Attaru) ###
+
+'''
+The method getListOfNumbersInDirectory used to read the directory file and store the values into a list
+
+If the file successfully opens the with the pointer reference the method will read the each line of the directory file and stroes the data into the list
+'''
 
 def getListOfNumbersInDirectory(pointer_to_phone_directory):
     list_of_numbers = []

@@ -5,6 +5,9 @@ from app.helper.GenericHelper import checkFileExistance
 
 
 class DictionaryDataTest(unittest.TestCase):
+    '''
+    test case to read the data from the dictionary
+    '''
     def testGetDicitonaryData(self):
         pointer_to_dictionary_file = checkFileExistance("../data/dictionary")
         expectedDictionaryData = {'2': ['A', 'B', 'C'], '3': ['D', 'E', 'F'], '4': ['G', 'H', 'I'], '5': ['J', 'K', 'L'], '6': ['M', 'N', 'O'], '7': ['P', 'Q', 'R', 'S'], '8': ['T', 'U', 'V'], '9': ['W', 'X', 'Y', 'Z']}

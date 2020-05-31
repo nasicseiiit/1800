@@ -6,4 +6,5 @@ def getDictionaryData(pointer_to_dictionary):
         line = line.split('=')
         line[1] = line[1].split(',')
         alpha_phrases[line[0]] = line[1]
+    pointer_to_dictionary.close()
     return alpha_phrases

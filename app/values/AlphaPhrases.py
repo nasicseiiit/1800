@@ -6,7 +6,6 @@ def getPossiblePhraseforDigit(digit,alphaPhrasesFromDictionary):
     else:
         return []
 
-
 def generateAllPossiblePhrases(allPossiblePhrases,listOfPhrases):
     result  = list(product(allPossiblePhrases, listOfPhrases))
     return result

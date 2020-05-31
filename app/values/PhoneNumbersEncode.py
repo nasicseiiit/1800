@@ -1,10 +1,9 @@
 
 from app.getters.CliArguments import getCliArguments
 from app.getters.DictionaryData import getDictionaryData
-from app.helper.GenericHelper import checkFileExistance, replaceDotWithHyphen, removeEveryPunctuation, convertListOfStringsToString
+from app.helper.GenericHelper import checkFileExistance, replaceDotWithHyphen, removeEveryPunctuation, convertListOfStringsToCapitalString
 from app.getters.PhoneNumbersData import getListOfNumbersInDirectory
 from app.values.AlphaPhrases import getPossiblePhraseforDigit, generateAllPossiblePhrases
-
 
 def getAlphaPhrasesForEachNumber(phone_number,alphaPhrasesFromDictionary):
     phone_number = replaceDotWithHyphen(phone_number)
@@ -27,9 +26,8 @@ def getAlphaPhrasesForEachNumber(phone_number,alphaPhrasesFromDictionary):
                 prevIndex = digit_index
                 listOfPhrases = [digit]
         alpha_phrases = generateAllPossiblePhrases(allPossiblePhrases,listOfPhrases)
-        allPossiblePhrases = convertListOfStringsToString(alpha_phrases)
+        allPossiblePhrases = convertListOfStringsToCapitalString(alpha_phrases)
     return allPossiblePhrases
-
 
 def getAlphaPhrasesForDirectoryNumbers():
     [dictionary_path,phone_directory_path] = getCliArguments()
@@ -63,4 +61,3 @@ def main():
 
 if __name__ == "__main__":
     main() #calling main method
-

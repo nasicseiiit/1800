@@ -64,6 +64,7 @@ Please add the command line arguments for the phone directory and dictionary fil
     -> passing single command line argument 
         ... The argument will be the phone directory file input
         ... The dictionary file will be set by the system default
+        eg : phone_numbers_data
         
     -> passing three command line arguments with second argument as "-d"
         ... The first argument will be the phone directory file input

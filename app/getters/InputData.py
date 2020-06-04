@@ -2,6 +2,9 @@ from app.getters.DictionaryData import getDictionaryData
 from app.getters.PhoneNumbersData import getListOfNumbersInDirectory
 from app.helper.GenericHelper import checkFileExistance
 
+'''
+The method getInputData will get the data from the input files and return the listOfNumbersFromDirectory and alphaPhrasesFromDictionary 
+'''
 
 def getInputData(phone_directory_path,dictionary_path):
     pointer_to_phone_directory = checkFileExistance(phone_directory_path)  # method to check whether the file exist or not

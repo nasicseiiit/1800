@@ -19,3 +19,32 @@ The method generateAllPossiblePhrases will return the all possible Alpha Phrases
 def generateAllPossiblePhrases(allPossiblePhrases,listOfPhrases):
     result  = list(product(allPossiblePhrases, listOfPhrases))
     return result
+
+'''
+The method firstUnchangedDigit will return the allPossiblePhrases 
+'''
+
+def firstUnchangedDigit(phone_number,alphaPhrasesFromDictionary):
+    digit = phone_number[0]
+    listOfPhrases = getPossiblePhraseforDigit(digit,alphaPhrasesFromDictionary)  # getting the list of possible phrases of digit
+    prevIndex = -2  # to know the consecutive unchanged digit
+    if (len(listOfPhrases) == 0):
+        listOfPhrases = [digit]
+        prevIndex = 0
+    allPossiblePhrases = listOfPhrases
+    return  allPossiblePhrases,listOfPhrases,prevIndex
+
+'''
+The method firstUnchangedDigit will skip the phone number if more than two unchanged digits 
+'''
+
+def isHaveReplacementsFlagForNumber(allPossiblePhrases,phone_number,alphaPhrasesFromDictionary,prevIndex,digit_index):
+    digit = phone_number[digit_index]
+    listOfPhrases = getPossiblePhraseforDigit(digit, alphaPhrasesFromDictionary)
+    if (len(listOfPhrases) == 0):  # condition if the two consecutive digits are unchanged
+        if (digit_index - prevIndex == 1):
+            allPossiblePhrases = []  # then skipping the phone number to encode
+        else:
+            prevIndex = digit_index
+            listOfPhrases = [digit]
+    return allPossiblePhrases,listOfPhrases,prevIndex

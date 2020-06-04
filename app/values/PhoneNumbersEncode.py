@@ -6,7 +6,8 @@ from app.getters.InputData import getInputData
 from app.helper.GenericHelper import checkFileExistance, replaceDotWithHyphen, removeEveryPunctuation, convertListOfStringsToCapitalString
 from app.getters.PhoneNumbersData import getListOfNumbersInDirectory
 from app.helper.PrintOutputData import printOutputData
-from app.values.AlphaPhrases import getPossiblePhraseforDigit, generateAllPossiblePhrases
+from app.values.AlphaPhrases import getPossiblePhraseforDigit, generateAllPossiblePhrases, \
+    isHaveReplacementsFlagForNumber, firstUnchangedDigit
 
 '''
 The method getAlphaPhrasesForEachNumber will get the all possible Alpha phrases of a phone number  
@@ -14,23 +15,9 @@ The method getAlphaPhrasesForEachNumber will get the all possible Alpha phrases 
 def getAlphaPhrasesForEachNumber(phone_number,alphaPhrasesFromDictionary):
     phone_number = replaceDotWithHyphen(phone_number) #replacing all the dots in the phone number with the Hyphen
     phone_number = removeEveryPunctuation(phone_number) #removing all the punctuations in the phone number
-    digit = phone_number[0]
-    listOfPhrases = getPossiblePhraseforDigit(digit,alphaPhrasesFromDictionary) #getting the list of possible phrases of digit
-    prevIndex = -2 #to know the consecutive unchanged digit
-    if(len(listOfPhrases)==0):
-        listOfPhrases = [digit]
-        prevIndex = 0
-    allPossiblePhrases = listOfPhrases
+    [allPossiblePhrases,listOfPhrases,prevIndex] = firstUnchangedDigit(phone_number,alphaPhrasesFromDictionary)
     for digit_index in range(1,len(phone_number)):
-        digit = phone_number[digit_index]
-        listOfPhrases = getPossiblePhraseforDigit(digit,alphaPhrasesFromDictionary)
-        if (len(listOfPhrases) == 0): #condition if the two consecutive digits are unchanged
-            if(digit_index-prevIndex == 1):
-                allPossiblePhrases=[] #then skipping the phone number to encode
-                break
-            else:
-                prevIndex = digit_index
-                listOfPhrases = [digit]
+        [allPossiblePhrases,listOfPhrases,prevIndex] = isHaveReplacementsFlagForNumber(allPossiblePhrases,phone_number, alphaPhrasesFromDictionary, prevIndex, digit_index)
         alpha_phrases = generateAllPossiblePhrases(allPossiblePhrases,listOfPhrases)#generating all possible alpha phrases of phone number
         allPossiblePhrases = convertListOfStringsToCapitalString(alpha_phrases)
     return allPossiblePhrases
@@ -50,10 +37,10 @@ def getAlphaPhrasesForDirectoryNumbers(listOfNumbersFromDirectory,alphaPhrasesFr
     return allPossiblePhrasesOfAllNumbers,skipped_phone_numbers
 
 def main():
-    [dictionary_path, phone_directory_path] = getCliArguments()
-    [listOfNumbersFromDirectory,alphaPhrasesFromDictionary]  = getInputData(phone_directory_path,dictionary_path)
+    [dictionary_path, phone_directory_path] = getCliArguments() #getting the input files
+    [listOfNumbersFromDirectory,alphaPhrasesFromDictionary]  = getInputData(phone_directory_path,dictionary_path)#extracting the data from the files
     if(len(listOfNumbersFromDirectory) > 0 and len(alphaPhrasesFromDictionary) >0):
         [allPossiblePhrasesOfAllNumbers,skipped_phone_numbers] = getAlphaPhrasesForDirectoryNumbers(listOfNumbersFromDirectory,alphaPhrasesFromDictionary)#getting all the possible alpha phrases of all phone numbers of directory
-        printOutputData(allPossiblePhrasesOfAllNumbers,skipped_phone_numbers)
+        printOutputData(allPossiblePhrasesOfAllNumbers,skipped_phone_numbers) #printing the output
 if __name__ == "__main__":
     main() #calling main method

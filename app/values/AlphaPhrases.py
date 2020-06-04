@@ -41,10 +41,9 @@ The method firstUnchangedDigit will skip the phone number if more than two uncha
 def isHaveReplacementsFlagForNumber(allPossiblePhrases,phone_number,alphaPhrasesFromDictionary,prevIndex,digit_index):
     digit = phone_number[digit_index]
     listOfPhrases = getPossiblePhraseforDigit(digit, alphaPhrasesFromDictionary)
-    if (len(listOfPhrases) == 0):  # condition if the two consecutive digits are unchanged
-        if (digit_index - prevIndex == 1):
-            allPossiblePhrases = []  # then skipping the phone number to encode
-        else:
-            prevIndex = digit_index
-            listOfPhrases = [digit]
+    if (len(listOfPhrases) == 0 and digit_index - prevIndex == 1):  # condition if the two consecutive digits are unchanged
+        allPossiblePhrases = []  # then skipping the phone number to encode
+    elif (len(listOfPhrases) == 0 and digit_index - prevIndex != 1):  # condition if the two consecutive digits are unchanged
+        prevIndex = digit_index
+        listOfPhrases = [digit]
     return allPossiblePhrases,listOfPhrases,prevIndex

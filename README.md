@@ -34,13 +34,21 @@ According to my dictionary.
 The number encoding on the phone the program will use is:
 
 DIGIT CHARACTERS
+
 2 A B C
+
 3 D E F
+
 4 G H I
+
 5 J K L
+
 6 M N O
+
 7 P Q R S
+
 8 T U V
+
 9 W X Y Z
 
 ####################
@@ -48,6 +56,7 @@ Steps to Run the source code
 ####################
 PhoneNumbersEncode.py is the main file with the source code
 Please add the command line arguments for the phone directory and dictionary files as shown below
+    
     -> Passing zero command line arguments
         ... The program will prompt for the phone directory path
         ... The dictionary file will be set by the system default
@@ -69,17 +78,36 @@ phrases and according to the above problem statement
 
 Running test cases
 ###################
-AlphaPhraseTest.py -> this file consist of 2 test cases
-DictionaryDataTest.py -> this file consist of 1 test case
-GenericHelperTest.py -> this file consist of 4 test cases
-PhoneNumbersDataTest.py -> this file consist of 1 test case
+
+AlphaPhraseTest.py        -> this file consist of 2 test cases
+
+DictionaryDataTest.py     -> this file consist of 1 test case
+
+GenericHelperTest.py      -> this file consist of 4 test cases
+
+PhoneNumbersDataTest.py   -> this file consist of 1 test case
+
 PhoneNumbersEncodeTest.py -> this file consist of 8 test cases and the negative test case will fail
+
 #############################################
 
-#There are 4 supporting files mentioned below
+#There are 4  getter files mentioned below
 
     CliArguments.py
     DictionaryData.py
     PhoneNumbersData.py
     GenericHelper.py
-    
+   
+#############################################
+
+#There are 2  helper files mentioned below
+
+    GenericHelper.py
+    PrintOutputData.py
+
+#############################################
+
+#There are 2  source files mentioned below
+
+    AlphaPhrases.py
+    PhoneNumbersEncode.py 

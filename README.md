@@ -89,7 +89,9 @@ for phone directory file you can provide the input file by STDIN or Command line
     eg : phone_numbers_data -d dictionary`
 
 `getAlphaPhrasesForDirectoryNumbers(231) #returns  ['AD1', 'AE1', 'AF1', 'BD1', 'BE1', 'BF1', 'CD1', 'CE1', 'CF1']` 
-`getAlphaPhrasesForDirectoryNumbers(2301) #returns []` 
+
+`getAlphaPhrasesForDirectoryNumbers(2301) #returns []`
+ 
 `getAlphaPhrasesForDirectoryNumbers(2) #returns ['A','B','C']` 
 
 #Contributing

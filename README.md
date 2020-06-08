@@ -1,5 +1,6 @@
 #1800 CODING CHALLENGE
 
+
 Many companies like to list their phone numbers using the letters printed on most
 telephones. This makes the number easier to remember for customers. An example may
 be 1-800-FLOWERS
@@ -55,6 +56,7 @@ DIGIT CHARACTERS
 
 
 #Installation
+
 First, clone 1800_CODE_CHALLENGE using git
 
 _`https://github.com/nasicseiiit/1800`_
@@ -66,7 +68,9 @@ Then, cd to the 1800_CODE_CHALLENGE folder
  sudo python setup.py install
 
 #Usage
+
 #Input Format
+
 provide the input format using CLI or STDIN
 for phone directory file you can provide the input file by STDIN or Command line
 
@@ -98,4 +102,5 @@ https://github.com/nasicseiiit/1800/issues/new
 If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
 
 #Licensing
+
 This project is licensed under Unlicense license. This license does not require you to take the license with you to your project. 

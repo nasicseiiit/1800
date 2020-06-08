@@ -9,10 +9,25 @@ The method getInputData will get the data from the input files and return the li
 def getInputData(phone_directory_path,dictionary_path):
     pointer_to_phone_directory = checkFileExistance(phone_directory_path)  # method to check whether the file exist or not
     pointer_to_dictionary = checkFileExistance(dictionary_path)  # method to check whether the file exist or not
-    if (pointer_to_phone_directory is not False and pointer_to_dictionary is not False):  # if file exist
+
+    listOfNumbersFromDirectory = getInputDataOfPhoneDirectory(pointer_to_phone_directory)
+    alphaPhrasesFromDictionary = getInputDataOfDictionary(pointer_to_dictionary)
+
+    return listOfNumbersFromDirectory,alphaPhrasesFromDictionary
+
+def getInputDataOfPhoneDirectory(pointer_to_phone_directory):
+    if (pointer_to_phone_directory is not False):
         listOfNumbersFromDirectory = getListOfNumbersInDirectory(pointer_to_phone_directory)  # getting the phone numbers of directory into the list
-        alphaPhrasesFromDictionary = getDictionaryData(pointer_to_dictionary)  # getting the alpha phrases of dictionary
-        return  listOfNumbersFromDirectory,alphaPhrasesFromDictionary
+        return listOfNumbersFromDirectory
     else:
-        print("Error: File does not exist.")  # printing the message if the file does not exist
-        return [],[]
+        print("Error: phone directory file is not exist.")  # printing the message if the file does not exist
+        return []
+
+def getInputDataOfDictionary(pointer_to_dictionary):
+    if (pointer_to_dictionary is not False):  # if file exist
+        alphaPhrasesFromDictionary = getDictionaryData(pointer_to_dictionary)  # getting the alpha phrases of dictionary
+        return alphaPhrasesFromDictionary
+
+    else:
+        print("Error: dictionary file does not exist.")  # printing the message if the file does not exist
+        return []

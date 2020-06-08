@@ -1,3 +1,5 @@
+#1800 CODING CHALLENGE
+
 Many companies like to list their phone numbers using the letters printed on most
 telephones. This makes the number easier to remember for customers. An example may
 be 1-800-FLOWERS
@@ -51,64 +53,49 @@ DIGIT CHARACTERS
 
 9 W X Y Z
 
-####################
-Steps to Run the source code
-####################
-PhoneNumbersEncode.py is the main file with the source code
-Please add the command line arguments for the phone directory and dictionary files as shown below
+
+#Installation
+First, clone 1800_CODE_CHALLENGE using git
+
+_`https://github.com/nasicseiiit/1800`_
+
+Then, cd to the 1800_CODE_CHALLENGE folder 
+
+ cd 1800_CODE_CHALLENGE/
+ 
+ sudo python setup.py install
+
+#Usage
+#Input Format
+provide the input format using CLI or STDIN
+for phone directory file you can provide the input file by STDIN or Command line
+
+`-> Passing zero command line arguments
+    ... The program will prompt for the phone directory path
+    ... The dictionary file will be set by the system default`
+     
+`-> passing single command line argument 
+    ... The argument will be the phone directory file input
+    ... The dictionary file will be set by the system default
+    eg : phone_numbers_data`
     
-    -> Passing zero command line arguments
-        ... The program will prompt for the phone directory path
-        ... The dictionary file will be set by the system default
-         
-    -> passing single command line argument 
-        ... The argument will be the phone directory file input
-        ... The dictionary file will be set by the system default
-        eg : phone_numbers_data
-        
-    -> passing three command line arguments with second argument as "-d"
-        ... The first argument will be the phone directory file input
-        ... The third argument will be the  dictionary file input
-        eg : phone_numbers_data -d dictionary
-   
-please click on PhoneNumbersEncode.py and click on run button if passed the command line arguments then it will take the action according to that
-If no command line arguments passed then it will prompt for the phone directory path and the dictionary will be set by default
+`-> passing three command line arguments with second argument as "-d"
+    ... The first argument will be the phone directory file input
+    ... The third argument will be the  dictionary file input
+    eg : phone_numbers_data -d dictionary`
 
-If the phone number from directory is have replacement then it will provide the output if not it will skip that number according to the dictionary alpha 
-phrases and according to the above problem statement
+`getAlphaPhrasesForDirectoryNumbers(231) #returns  ['AD1', 'AE1', 'AF1', 'BD1', 'BE1', 'BF1', 'CD1', 'CE1', 'CF1']` 
+`getAlphaPhrasesForDirectoryNumbers(2301) #returns []` 
+`getAlphaPhrasesForDirectoryNumbers(2) #returns ['A','B','C']` 
 
-Running test cases
-###################
+#Contributing
 
-AlphaPhraseTest.py        -> this file consist of 2 test cases
+As I am a beginner and writing the projects in GitHub. 
+If you have any ideas or improvements, just open an issue by clicking on below link and tell me what you think.
 
-DictionaryDataTest.py     -> this file consist of 1 test case
+https://github.com/nasicseiiit/1800/issues/new
 
-GenericHelperTest.py      -> this file consist of 4 test cases
+If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
 
-PhoneNumbersDataTest.py   -> this file consist of 1 test case
-
-PhoneNumbersEncodeTest.py -> this file consist of 8 test cases and the negative test case will fail
-
-#############################################
-
-#There are 4  getter files mentioned below
-
-    CliArguments.py
-    DictionaryData.py
-    PhoneNumbersData.py
-    GenericHelper.py
-   
-#############################################
-
-#There are 2  helper files mentioned below
-
-    GenericHelper.py
-    PrintOutputData.py
-
-#############################################
-
-#There are 2  source files mentioned below
-
-    AlphaPhrases.py
-    PhoneNumbersEncode.py 
+#Licensing
+This project is licensed under Unlicense license. This license does not require you to take the license with you to your project. 

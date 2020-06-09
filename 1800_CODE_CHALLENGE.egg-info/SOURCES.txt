@@ -1,6 +1,0 @@
-README.md
-setup.py
-1800_CODE_CHALLENGE.egg-info/PKG-INFO
-1800_CODE_CHALLENGE.egg-info/SOURCES.txt
-1800_CODE_CHALLENGE.egg-info/dependency_links.txt
-1800_CODE_CHALLENGE.egg-info/top_level.txt

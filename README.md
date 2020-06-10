@@ -54,6 +54,9 @@ DIGIT CHARACTERS
 
 9 W X Y Z
 
+#Requirements
+
+Please install python 3 and above
 
 #Installation
 
@@ -61,13 +64,26 @@ First, clone 1800_CODE_CHALLENGE using git
 
 _`https://github.com/nasicseiiit/1800`_
 
+
+# To build the project
+
 Then, cd to the 1800_CODE_CHALLENGE folder 
 
  cd 1800_CODE_CHALLENGE/
  
- sudo python setup.py install
-
-#Usage
+ sudo python setup.py install 
+ 
+#To run the project
+ 
+ cd 1800_CODE_CHALLENGE
+ 
+ cd to the values folder in app
+ 
+ cd app/values
+ 
+ then execute below command
+ 
+ python PhoneNumbersEncode.py
 
 #Input Format
 
